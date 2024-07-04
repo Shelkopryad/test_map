@@ -1,0 +1,12 @@
+<div>
+  <ol>
+    <% @components.each do |component| %>
+      <li><%= link_to component.name, component %></li>
+      <ol>
+        <% component.test_cases.each do |test_case| %>
+          <li><%= test_case.name %></li>
+        <% end %>
+      </ol>
+    <% end %>
+  </ol>
+</div>

@@ -1,0 +1,5 @@
+<% @bugs.each do |bug| %>
+  <strong><%= link_to bug.name, bug %></strong>
+  <p><small><%= bug.tags.map { |it| it.name }.join(', ') %></small></p>
+  <br />
+<% end %>

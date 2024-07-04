@@ -1,0 +1,18 @@
+<div>
+  <h4><%= @component.name %></h4>
+  <smaill>
+    Tags: <%= @component.tags.map { |it| it.name }.join(', ') %>
+  </smaill>
+  <br />
+  <br />
+  <strong>Test Cases</strong>
+  <% @component.test_cases.each do |test_case| %>
+    <p><%= test_case.name %></p>
+    <p><%= test_case.steps %></p>
+  <% end %>
+  <br />
+  <strong>Bugs</strong>
+  <% @component.bugs.each do |bug| %>
+    <p><%= link_to bug.name, bug %></p>
+  <% end %>
+</div>

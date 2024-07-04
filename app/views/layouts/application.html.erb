@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Testmap</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <%= javascript_include_tag "application", "data-turbo-track": "reload", type: "module" %>
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="navbar">
+        <%= link_to "Home", root_path, class: 'navbar-item' %>
+        <%= link_to "Components", components_path, class: 'navbar-item' %>
+        <%= link_to "Bugs", bugs_path, class: 'navbar-item' %>
+      </div>
+      <div class="content">
+        <%= yield %>
+      </div>
+    </div>
+  </body>
+</html>

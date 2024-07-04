@@ -1,0 +1,5 @@
+<strong><%= @bug.name %></strong>
+<br />
+<small><%= @bug.description %></small>
+<br />
+Tags: <%= @bug.tags.map { |it| it.name }.join(', ') %>
