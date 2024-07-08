@@ -14,19 +14,36 @@
  *= require_self
  */
 
-.container {
-    display: flex;
-}
+/*.container {*/
+/*    display: flex;*/
+/*}*/
 
-.navbar {
-    padding: 15px;
-}
+/*.navbar {*/
+/*    padding: 15px;*/
+/*}*/
 
-.navbar-item {
-    display: block;
-    padding-bottom: 5px;
-}
+/*.navbar-item {*/
+/*    display: block;*/
+/*    padding-bottom: 5px;*/
+/*}*/
 
-.content {
-    padding: 15px;
-}
+/*.content {*/
+/*    padding: 1em;*/
+/*    display: flex;*/
+/*    max-width: 50em;*/
+/*}*/
+
+/*.actions {*/
+/*    margin-right: 1em;*/
+/*}*/
+
+/*ul {*/
+/*    display: block;*/
+/*    list-style-type: disc;*/
+/*    margin-block-start: 0em;*/
+/*    margin-block-end: 1em;*/
+/*    margin-inline-start: 0px;*/
+/*    margin-inline-end: 0px;*/
+/*    padding-inline-start: 40px;*/
+/*    unicode-bidi: isolate;*/
+/*}*/

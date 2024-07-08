@@ -1,5 +1,16 @@
 <% @bugs.each do |bug| %>
-  <strong><%= link_to bug.name, bug %></strong>
+  <strong>
+    <%= link_to "#{bug.key} #{bug.name}",
+                bug,
+                class: 'link-dark link-underline-opacity-25 link-underline-opacity-75-hover' %>
+  </strong>
+  <br/>
+  <small>
+    Component: <%= link_to bug.component.name,
+                           component_path(bug.component),
+                           class: 'link-dark link-underline-opacity-25 link-underline-opacity-75-hover' %>
+  </small>
+  <br/>
   <p><small><%= bug.tags.map { |it| it.name }.join(', ') %></small></p>
-  <br />
+  <br/>
 <% end %>

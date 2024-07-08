@@ -7,3 +7,7 @@
 #   ["Action", "Comedy", "Drama", "Horror"].each do |genre_name|
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
+
+['Purchase Orders', 'Opportunities', 'Mail Manager', 'Products', 'Dashboards', 'Companies'].each do |component_name|
+  Component.create(name: component_name, to_test: false)
+end

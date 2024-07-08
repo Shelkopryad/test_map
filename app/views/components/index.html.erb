@@ -1,12 +1,13 @@
-<div>
-  <ol>
-    <% @components.each do |component| %>
-      <li><%= link_to component.name, component %></li>
-      <ol>
-        <% component.test_cases.each do |test_case| %>
-          <li><%= test_case.name %></li>
-        <% end %>
-      </ol>
-    <% end %>
-  </ol>
+<div class="row">
+  <div class="col-9">
+    <ul>
+      <% @components.each do |component| %>
+        <li><%= link_to component.name, component %></li>
+      <% end %>
+    </ul>
+  </div>
+  <div class="col-3">
+    <%= link_to 'New', new_component_path %>
+  </div>
 </div>
+

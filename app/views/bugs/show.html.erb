@@ -1,5 +1,13 @@
+<strong><%= link_to @bug.component.name, component_path(@bug.component) %></strong>
+<br />
 <strong><%= @bug.name %></strong>
 <br />
-<small><%= @bug.description %></small>
+<% unless @bug.description.nil? %>
+  <small><%= @bug.description %></small>
+<% end %>
 <br />
+<%= link_to "Jira #{@bug.key}", @bug.jira_link, target: '_blank' %>
+<br />
+<br />
+
 Tags: <%= @bug.tags.map { |it| it.name }.join(', ') %>
