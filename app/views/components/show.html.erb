@@ -2,26 +2,35 @@
   <div class="col-9">
     <h4><%= @component.name %></h4>
     <smaill>
-      Tags: <%= @component.tags.map { |it| it.name }.join(', ') %>
+      Tags: <%= @component.join_tags %>
     </smaill>
     <br />
     <br />
     <strong>Test Cases</strong>
-    <% @component.test_cases.each do |test_case| %>
-      <p><%= test_case.name %></p>
-      <p><%= test_case.steps %></p>
+    <% @component.test_cases.each_with_index do |test_case, index| %>
+      <p>
+        <a class="link-dark link-underline-opacity-25 link-underline-opacity-75-hover"
+          data-bs-toggle="collapse" href="#collapseExample_<%= index %>" aria-expanded="false" aria-controls="collapseExample">
+          <%= test_case.name %>
+        </a>
+      </p>
+      <div class="collapse" id="collapseExample_<%= index %>">
+        <div>
+          <small class="text-muted"><%= test_case.steps %></small>
+        </div>
+      </div>
     <% end %>
     <br />
     <strong>Bugs</strong>
     <% @component.bugs.each do |bug| %>
-      <p><%= link_to bug.name, bug %></p>
+      <p><%= link_to bug.name, bug, class: 'link-dark link-underline-opacity-25 link-underline-opacity-75-hover' %></p>
     <% end %>
   </div>
   <div class="col-3">
     <%= link_to 'Destroy', @component, data: {
       turbo_method: :delete,
       turbo_confirm: "Are you sure?"
-    }  %>
+    } %>
   </div>
 </div>
 

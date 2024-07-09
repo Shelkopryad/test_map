@@ -1,4 +1,6 @@
-<strong><%= link_to @bug.component.name, component_path(@bug.component) %></strong>
+<%= link_to @bug.component.name,
+            component_path(@bug.component),
+            class: 'link-dark link-underline-opacity-25 link-underline-opacity-75-hover' %>
 <br />
 <strong><%= @bug.name %></strong>
 <br />
@@ -10,4 +12,4 @@
 <br />
 <br />
 
-Tags: <%= @bug.tags.map { |it| it.name }.join(', ') %>
+Tags: <%= @bug.join_tags %>

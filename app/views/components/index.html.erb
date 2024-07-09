@@ -2,7 +2,11 @@
   <div class="col-9">
     <ul>
       <% @components.each do |component| %>
-        <li><%= link_to component.name, component %></li>
+        <li>
+          <%= link_to component.name,
+                      component,
+                      class: 'link-dark link-underline-opacity-25 link-underline-opacity-75-hover' %>
+        </li>
       <% end %>
     </ul>
   </div>

@@ -5,6 +5,14 @@
   </div>
 
   <div>
+    Tags?
+    <div>
+      <%= form.label :tags, 'Tags' %>
+      <%= form.text_field :tags, value: '' %>
+    </div>
+  </div>
+
+  <div>
     <%= form.submit 'Create' %>
   </div>
 <% end %>

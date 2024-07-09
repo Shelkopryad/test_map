@@ -13,7 +13,16 @@ class ComponentsController < ApplicationController
 
   def create
     component = Component.new(component_params)
+    tags = []
+    params['component']['tags'].split(',').map(&:strip).each do |tag|
+      unless Tag.exists?(name: tag)
+        new_tag = Tag.create(name: tag)
+        tags << new_tag
+      end
+    end
+
     if component.save
+      component.tags += tags
       redirect_to components_path
     else
       redirect_to new_component_path

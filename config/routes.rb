@@ -9,6 +9,11 @@ Rails.application.routes.draw do
   resources :components
   resources :bugs
   resources :test_cases
-  resources :homepage, only: :index
+  resources :homepage, only: [:index] do
+    collection do
+      get :search
+    end
+  end
 
+  get 'search', to: 'homepage#search', as: :search
 end

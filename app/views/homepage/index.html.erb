@@ -1,0 +1,29 @@
+<%= form_with url: "/search", method: :get do |form| %>
+  <%= form.text_field :query %>
+  <%= form.submit 'Search' %>
+<% end %>
+<br />
+<br />
+<% @result.each do |component, properties| %>
+  <h4><%= component.name %></h4>
+  <% if properties[:bugs].is_a? Numeric %>
+    <p>Bugs: <%= properties[:bugs] %></p>
+  <% else %>
+    <p>Bugs</p>
+    <ul>
+      <% properties[:bugs].each do |bug| %>
+        <li><%= bug.name %></li>
+      <% end %>
+    </ul>
+  <% end %>
+  <% if properties[:test_cases].is_a? Numeric %>
+    <p>Test cases: <%= properties[:test_cases] %></p>
+  <% else %>
+    <p>Test cases</p>
+    <ul>
+      <% properties[:test_cases].each do |test_case| %>
+        <li><%= test_case.name %></li>
+      <% end %>
+    </ul>
+  <% end %>
+<% end %>
