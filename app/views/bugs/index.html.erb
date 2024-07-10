@@ -1,15 +1,22 @@
-<% @bugs.each do |bug| %>
-  <%= link_to "#{bug.key} #{bug.name}",
-              bug,
-              class: 'link-dark link-underline-opacity-25 link-underline-opacity-75-hover' %>
+<div class="row">
+  <div class="col-8">
+    <% @bugs.each do |bug| %>
+      <%= link_to "#{bug.key} #{bug.name}",
+                  bug,
+                  class: 'link-dark link-underline-opacity-25 link-underline-opacity-75-hover' %>
 
-  <br/>
-  <small>
-    Component: <%= link_to bug.component.name,
-                           component_path(bug.component),
-                           class: 'link-dark link-underline-opacity-25 link-underline-opacity-75-hover' %>
-  </small>
-  <br/>
-  <p><small><%= bug.tags.map { |it| it.name }.join(', ') %></small></p>
-  <br/>
-<% end %>
+      <br/>
+      <small>
+        Component: <%= link_to bug.component.name,
+                               component_path(bug.component),
+                               class: 'link-dark link-underline-opacity-25 link-underline-opacity-75-hover' %>
+      </small>
+      <br/>
+      <p><small><%= bug.tags.map { |it| it.name }.join(', ') %></small></p>
+      <br/>
+    <% end %>
+  </div>
+  <div class="col-4">
+    <%= link_to 'New', new_bug_path %>
+  </div>
+</div>

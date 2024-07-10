@@ -1,0 +1,28 @@
+<%= form_with model: @bug do |form| %>
+  <div>
+    <%= form.label :name, 'Title' %>
+    <%= form.text_field :name %>
+  </div>
+
+  <div>
+    <%= form.label :jira_link, 'Jira Link' %>
+    <%= form.text_field :jira_link %>
+  </div>
+
+  <div>
+    <%= form.label :component, 'Component' %>
+    <%= form.select :component, Component.all.map(&:name) %>
+  </div>
+
+  <div>
+    Tags?
+    <div>
+      <%= form.label :tags, 'Tags' %>
+      <%= form.text_field :tags, value: '' %>
+    </div>
+  </div>
+
+  <div>
+    <%= form.submit 'Create' %>
+  </div>
+<% end %>

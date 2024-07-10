@@ -1,3 +1,6 @@
+<div>
+  Tags: <%= Tag.all.map(&:name).join(', ') %>
+</div>
 <%= form_with url: "/search", method: :get do |form| %>
   <%= form.text_field :query %>
   <%= form.submit 'Search' %>
@@ -5,7 +8,7 @@
 <br />
 <br />
 <% @result.each do |component, properties| %>
-  <h4><%= component.name %></h4>
+  <h4><%= link_to component.name, component %></h4>
   <% if properties[:bugs].is_a? Numeric %>
     <p>Bugs: <%= properties[:bugs] %></p>
   <% else %>
